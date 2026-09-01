@@ -2,13 +2,12 @@
 
 % --- Packages ---
 \usepackage[utf8]{inputenc}
-\usepackage[margin=0.55in]{geometry}
+\usepackage[margin=0.6in]{geometry}
 \usepackage[scaled=0.95]{helvet}
 \renewcommand{\familydefault}{\sfdefault}
 \usepackage{microtype}
 \usepackage{xcolor}
 \usepackage{hyperref}
-\usepackage{enumitem}
 \usepackage{tabularx}
 \usepackage{titlesec}
 
@@ -23,8 +22,8 @@
     colorlinks=true,
     linkcolor=linkblue,
     urlcolor=linkblue,
-    pdftitle={Deepu Pauly - Resume},
-    pdfauthor={Deepu Pauly}
+    pdftitle={Nibraas Navas - Resume},
+    pdfauthor={Nibraas Navas}
 }
 
 % --- Page Setup ---
@@ -41,103 +40,58 @@
   [\vspace{-4pt}\rule{\textwidth}{0.5pt}]
 \titlespacing*{\section}{0pt}{10pt}{6pt}
 
-% --- Custom Commands ---
-\newcommand{\experienceheader}[4]{%
-  \textbf{#1} \hfill #2 \\
-  \textit{#3} \hfill \textnormal{#4} \\
-}
-
 \begin{document}
 
 % ==================== HEADER ====================
-{\LARGE \textbf{DEEPU PAULY}}\\[2pt]
-{\small \textbf{S O F T W A R E \quad E N G I N E E R \quad $\cdot$ \quad F U L L \quad S T A C K}}\\[4pt]
+{\LARGE \textbf{NIBRAAS NAVAS}}\\[2pt]
+{\small \textbf{DATA SCIENCE \quad MACHINE LEARNING ENGINEER}}\\[4pt]
 {\small 
-+971 54 318 7543 \quad$\cdot$\quad 
-\href{mailto:deepupauly03@gmail.com}{deepupauly03@gmail.com} \quad$\cdot$\quad 
-\href{https://linkedin.com/in/deepu-pauly-0ba30a211}{linkedin.com/in/deepu-pauly-0ba30a211} \quad$\cdot$\quad 
-\href{https://github.com/deepupauly}{github.com/deepupauly}\\[2pt]
-\href{https://deepu-portfolio-virid.vercel.app}{deepu-portfolio-virid.vercel.app} \quad$\cdot$\quad 
-Dubai, UAE
++91 9656535727 \quad$\cdot$\quad 
+\href{mailto:nibraasnikz@gmail.com}{nibraasnikz@gmail.com} \quad$\cdot$\quad 
+\href{https://linkedin.com/in/nibraas-navas}{linkedin.com/in/nibraas-navas} \quad$\cdot$\quad 
+\href{https://github.com/NibraasNavas}{github.com/NibraasNavas}\\[2pt]
+\href{https://nibraasnavas.github.io/Portfolio/}{nibraasnavas.github.io/Portfolio/} \quad$\cdot$\quad 
+Kerala, India
 }
 
 \vspace{4pt}
 
 % ==================== SUMMARY ====================
 \section*{SUMMARY}
-Full-stack software engineer with 4 years building and shipping production web applications end-to-end --- from API and database design through to React/Next.js interfaces --- including two in-house products in daily use across 170+ internal users. Core stack: Node.js/NestJS, React.js, Next.js, Python/FastAPI, PHP, and PostgreSQL, deployed with Docker and CI/CD on AWS.
+Recent Computer Science graduate specializing in Data Science with hands-on experience building AI-powered analytics platforms, machine learning pipelines, and business intelligence solutions. Proficient in Python, SQL, Power BI, and Scikit-learn, seeking opportunities in Data Science, Machine Learning, and AI Engineering.
 
 % ==================== TECHNICAL SKILLS ====================
 \section*{TECHNICAL SKILLS}
-\begin{tabularx}{\textwidth}{@{} p{2.8cm} X @{}}
-\textbf{Languages} & JavaScript, TypeScript, Python, PHP \\
-\textbf{Backend} & Node.js, NestJS, FastAPI, Django, REST API design, JWT / OAuth2, WebSockets \\
-\textbf{Frontend} & React.js, Next.js, Redux Toolkit, React Native, HTML5, CSS3, Tailwind CSS \\
-\textbf{Databases} & PostgreSQL, MySQL, MongoDB, Redis \\
-\textbf{Cloud \& DevOps} & AWS (S3, Lambda, ECS, CloudWatch), Docker, GitHub Actions, CI/CD, Nginx \\
-\textbf{Practices} & Agile, code review, automated testing (Jest, PyTest), event-driven design \\
+\begin{tabularx}{\textwidth}{@{} p{3.8cm} X @{}}
+\textbf{Programming} & Python, SQL, Django, FastAPI \\
+\textbf{Data Analytics} & Pandas, NumPy, Data Cleaning, EDA, Statistical Analysis, Feature Engineering \\
+\textbf{Machine Learning} & Scikit-learn, Regression, Classification, Model Evaluation, SHAP \\
+\textbf{Visualization} & Power BI, Tableau, Plotly, Matplotlib, Seaborn \\
+\textbf{Tools} & Git, GitHub, Streamlit, VS Code, Jupyter Notebook, Excel \\
 \end{tabularx}
-
-% ==================== EXPERIENCE ====================
-\section*{EXPERIENCE}
-
-% Job 1
-\textbf{Full Stack Developer} \hfill Aug 2024 -- Present \\
-\textit{Foot Print Real Estate} $\cdot$ Dubai, UAE \\
-{\small\color{lightgray} PHP $\cdot$ Node.js $\cdot$ NestJS $\cdot$ React.js $\cdot$ Next.js $\cdot$ React Native $\cdot$ Python $\cdot$ FastAPI $\cdot$ MySQL $\cdot$ PostgreSQL $\cdot$ MongoDB $\cdot$ AWS $\cdot$ Docker}
-\begin{itemize}[leftmargin=1.2em, itemsep=2pt, parsep=0pt, topsep=2pt]
-  \item Own end-to-end full-stack development of Foot Print's two in-house products, both in daily production use across 170+ internal users: \textbf{ProHandover}, a property-management platform across 4 role-based portals (Owner, Tenant, Maintenance, Management) with real-time tracking, document management, and web + React Native clients; and \textbf{Hostick}, an events and lead CRM with contact/deal pipelines and JWT-secured REST APIs --- building React/Next.js frontends and Node/NestJS and Python/FastAPI services from database schema to production UI.
-  \item Built and maintain the company's main real-estate platform (\href{https://fpproperty.com}{fpproperty.com}), a 1,500+ page PHP/React site spanning property listings, lead capture, CRM dashboards, and workflows.
-  \item Built a server-rendered multilingual system (English/Spanish) using Apache rewrites, a PHP localization layer, and hreflang tags, and implemented schema.org structured data --- making translated pages independently indexable and resolving Google Search Console errors to improve organic visibility.
-  \item Built responsive React.js interfaces following WCAG 2.1 accessibility practices and Core Web Vitals performance guidelines, alongside React Native interfaces for mobile workflows.
-  \item Implemented JWT auth, rate-limiting, and response caching across NestJS services; integrated event-driven CRM automation (HubSpot, Zapier, Make.com); shipped via Docker and GitHub Actions CI/CD with staging-to-production parity.
-\end{itemize}
-
-\vspace{4pt}
-
-% Job 2
-\textbf{Software Associate} \hfill Aug 2023 -- Jul 2024 \\
-\textit{Corezone Solutions} $\cdot$ Kerala, India \\
-{\small\color{lightgray} Node.js $\cdot$ Python $\cdot$ FastAPI $\cdot$ Django $\cdot$ Redis $\cdot$ Celery $\cdot$ React.js $\cdot$ MySQL $\cdot$ PostgreSQL $\cdot$ AWS $\cdot$ Docker}
-\begin{itemize}[leftmargin=1.2em, itemsep=2pt, parsep=0pt, topsep=2pt]
-  \item Built backend services in FastAPI, Django, and Node.js using Redis and Celery task queues to run long-running workloads asynchronously, separated from synchronous API requests.
-  \item Developed real-time React.js dashboards with WebSocket feeds for live analytics.
-  \item Built GitHub Actions CI/CD pipelines for Dockerized services and AWS Lambda workloads; contributed to peer code reviews and PyTest-based testing.
-\end{itemize}
-
-\vspace{4pt}
-
-% Job 3
-\textbf{Software Developer Intern} \hfill Nov 2022 -- Aug 2023 \\
-\textit{RISS Technologies} $\cdot$ Kerala, India \\
-{\small\color{lightgray} React.js $\cdot$ Python $\cdot$ FastAPI $\cdot$ Docker $\cdot$ Nginx $\cdot$ MySQL $\cdot$ MongoDB}
-\begin{itemize}[leftmargin=1.2em, itemsep=2pt, parsep=0pt, topsep=2pt]
-  \item Built analytics dashboards with React.js and FastAPI for inference outputs; containerised ETL pipelines with Docker and Nginx.
-  \item Added logging and error tracking to APIs, supporting faster debugging and model-retraining cycles.
-\end{itemize}
 
 % ==================== PROJECTS ====================
 \section*{PROJECTS}
 
-\textbf{Crypto Price Forecasting Platform} \\
-{\small\color{lightgray} FastAPI $\cdot$ TensorFlow $\cdot$ MongoDB $\cdot$ React} \\
-LSTM time-series service forecasting cryptocurrency prices: a FastAPI backend serving TensorFlow model predictions, MongoDB for historical market data, and a React dashboard for visualisation.
+\textbf{Driver Drowsiness Detection} \\
+{\small\color{lightgray} Python $\cdot$ TensorFlow $\cdot$ OpenCV $\cdot$ Dlib $\cdot$ Raspberry Pi} \\
+Developed a driver drowsiness detection system using deep learning and computer vision. The system uses a camera to detect signs like closed eyes and yawning and gives an alert when drowsiness is detected.
 
 \vspace{4pt}
 
-\textbf{RAG-Based Document Q\&A Assistant} \href{https://github.com/deepupauly}{\small GitHub} \\
-{\small\color{lightgray} Python $\cdot$ LangChain $\cdot$ FAISS $\cdot$ Open-Source LLMs} \\
-Retrieval-augmented pipeline using LangChain and FAISS vector indexing for semantic document search; designed chunking, embedding, retrieval, and prompt-chaining logic for source-grounded answers with document references. Deployed as a live web app.
+\textbf{Recipe Wizard: An AI Recipe Generator} \\
+{\small\color{lightgray} Flutter $\cdot$ Dart $\cdot$ Gemini API $\cdot$ Hive $\cdot$ Firebase} \\
+Developed an AI-powered mobile app that generates personalized recipes based on ingredient images and user preferences. The app also allows users to save and view their recipe history and favorites.
 
 % ==================== EDUCATION ====================
 \section*{EDUCATION}
 
-\textbf{Master of Computer Applications (MCA) --- Pursuing} \hfill 2026 -- 2028 \\
-Manipal Institute of Technology (Distance) $\cdot$ Bengaluru, India
+\textbf{B.Tech in Computer Science and Engineering (Data Science)} \hfill 2022 -- 2026 \\
+SCMS School of Engineering and Technology $\cdot$ Kerala, India
 
 \vspace{3pt}
 
-\textbf{BSc Computer Science} \hfill 2020 -- 2023 \\
-University of Calicut $\cdot$ Kerala, India
+\textbf{Higher Secondary Education} \hfill 2020 -- 2022 \\
+Aleemul Islam Higher Secondary School $\cdot$ Kerala, India
 
 \end{document}
