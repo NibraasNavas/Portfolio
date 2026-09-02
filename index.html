@@ -3,581 +3,751 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nibraas Navas | Data Science & Machine Learning Engineer</title>
-    <meta name="description" content="Portfolio of Nibraas Navas - Data Science & Machine Learning Engineer specializing in Python, Scikit-learn, Computer Vision, AI apps, and Data Analytics.">
+    <title>Nibraas Navas — Data Science & Machine Learning Engineer</title>
+    <meta name="description" content="Portfolio of Nibraas Navas — Data Science & Machine Learning Engineer specializing in Computer Vision, AI applications, predictive analytics, and edge systems.">
     <meta name="author" content="Nibraas Navas">
     
-    <!-- Open Graph / SEO -->
-    <meta property="og:title" content="Nibraas Navas - Data Science & ML Engineer">
-    <meta property="og:description" content="Explore AI-powered analytics platforms, machine learning pipelines, and computer vision projects by Nibraas Navas.">
+    <!-- Open Graph / Meta -->
+    <meta property="og:title" content="Nibraas Navas — Data Science & ML Engineer">
+    <meta property="og:description" content="Human-centered AI systems, computer vision pipelines, and data science solutions by Nibraas Navas.">
     <meta property="og:type" content="website">
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Outfit, Newsreader Serif, Plus Jakarta Sans, JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- FontAwesome & Lucide Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="pastel-theme-lavender">
+<body>
 
-    <!-- Ambient Pastel Background Gradients -->
-    <div class="ambient-background">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
-        <div class="blob blob-4"></div>
+    <!-- Ambient Gradient Scene -->
+    <div class="ambient-scene">
+        <div class="ambient-orb orb-smokey"></div>
+        <div class="ambient-orb orb-morlet"></div>
+        <div class="ambient-orb orb-rose"></div>
     </div>
 
-    <!-- Sticky Glass Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#hero" class="nav-logo">
-                <span class="logo-badge">NN</span>
-                <span class="logo-text">Nibraas</span>
+    <!-- Navigation Header -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-inner">
+            <a href="#hero" class="nav-brand">
+                <span class="brand-monogram">NN</span>
+                <span class="brand-name">Nibraas Navas<span class="brand-dot">.</span></span>
             </a>
             
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#about" class="nav-link"><i class="fa-regular fa-user"></i> About</a></li>
-                <li><a href="#skills" class="nav-link"><i class="fa-solid fa-code"></i> Skills</a></li>
-                <li><a href="#projects" class="nav-link"><i class="fa-solid fa-diagram-project"></i> Projects</a></li>
-                <li><a href="#education" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> Education</a></li>
-                <li><a href="#contact" class="nav-link"><i class="fa-regular fa-envelope"></i> Contact</a></li>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#story" class="nav-item-link">The Story</a></li>
+                <li><a href="#craft" class="nav-item-link">Craft & Toolkit</a></li>
+                <li><a href="#projects" class="nav-item-link">Case Studies</a></li>
+                <li><a href="#education" class="nav-item-link">Academic Trail</a></li>
+                <li><a href="#contact" class="nav-item-link">Contact</a></li>
             </ul>
 
-            <div class="nav-actions">
-                <div class="theme-switcher" title="Switch Pastel Palette Mode">
-                    <button class="theme-btn active" data-theme="lavender" title="Soft Lavender Mode"><span class="dot lavender-dot"></span></button>
-                    <button class="theme-btn" data-theme="mint" title="Sage Mint Mode"><span class="dot mint-dot"></span></button>
-                    <button class="theme-btn" data-theme="peach" title="Warm Peach Mode"><span class="dot peach-dot"></span></button>
-                </div>
-                <a href="Nibraas_Navas_Resume.pdf" download="Nibraas_Navas_Resume.pdf" class="btn btn-sm btn-outline"><i class="fa-solid fa-download"></i> Resume</a>
-                <a href="#contact" class="btn btn-sm btn-primary">Hire Me <i class="fa-solid fa-arrow-right"></i></a>
-                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
-                    <i class="fa-solid fa-bars"></i>
+            <div class="nav-controls">
+                <button class="theme-toggle-btn" id="theme-toggle" title="Toggle Smokey / Warm Editorial Mode">
+                    <i class="fa-solid fa-circle-half-stroke"></i>
+                    <span id="theme-toggle-text">Warm Mode</span>
+                </button>
+                <a href="Nibraas_Navas_Resume.pdf" download="Nibraas_Navas_Resume.pdf" class="btn btn-sm btn-outline">
+                    <i class="fa-solid fa-file-arrow-down"></i> Resume
+                </a>
+                <a href="#contact" class="btn btn-sm btn-primary">
+                    Let's Connect
+                </a>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Open Navigation Menu">
+                    <i class="fa-solid fa-bars-staggered"></i>
                 </button>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="hero-section" id="hero">
-        <div class="container hero-container">
-            <div class="hero-content">
-                <div class="status-pill">
-                    <span class="pulse-dot"></span>
-                    <span>Open to Data Science & ML Roles</span>
-                </div>
-                
-                <h1 class="hero-title">
-                    Hi, I'm <span class="gradient-text">Nibraas Navas</span>
-                </h1>
-                
-                <h2 class="hero-subtitle">
-                    <span id="typed-text">Data Science & Machine Learning Engineer</span>
-                </h2>
-                
-                <p class="hero-description">
-                    Recent Computer Science graduate specializing in Data Science with hands-on experience building AI-powered analytics platforms, machine learning pipelines, and computer vision solutions.
-                </p>
+    <!-- Main Content -->
+    <main>
+        
+        <!-- Hero Section: Editorial & Human-Centered -->
+        <section class="hero-section" id="hero">
+            <div class="container">
+                <div class="hero-grid">
+                    
+                    <div class="hero-narrative">
+                        <div class="status-badge">
+                            <span class="status-dot"></span>
+                            <span>Open to Data Science & ML Opportunities · Kerala, India</span>
+                        </div>
 
-                <div class="hero-metrics">
-                    <div class="metric-card">
-                        <span class="metric-value">2+</span>
-                        <span class="metric-label">AI/ML Projects</span>
+                        <h1 class="hero-heading">
+                            Engineering intelligent systems with <span class="hero-highlight">human-centered purpose.</span>
+                        </h1>
+
+                        <p class="hero-manifesto">
+                            I'm <strong>Nibraas Navas</strong>, a Data Science & Machine Learning Engineer. I believe artificial intelligence should never be an opaque black box. From <strong>real-time driver safety systems</strong> on edge hardware to <strong>multimodal culinary AI</strong>, I build reliable, explainable data pipelines and intelligent software that empower real people.
+                        </p>
+
+                        <div class="hero-actions">
+                            <a href="Nibraas_Navas_Resume.pdf" download="Nibraas_Navas_Resume.pdf" class="btn btn-primary">
+                                <i class="fa-solid fa-file-arrow-down"></i> Download Resume
+                            </a>
+                            <a href="#projects" class="btn btn-secondary">
+                                <i class="fa-solid fa-layer-group"></i> Explore Case Studies
+                            </a>
+                            <a href="#contact" class="btn btn-outline">
+                                <i class="fa-regular fa-comment-dots"></i> Get In Touch
+                            </a>
+                        </div>
+
+                        <div class="hero-metrics-bar">
+                            <div class="metric-unit">
+                                <span class="metric-num">2<span class="num-plus">+</span></span>
+                                <span class="metric-label">End-to-End AI Products</span>
+                            </div>
+                            <div class="metric-sep"></div>
+                            <div class="metric-unit">
+                                <span class="metric-num">B.Tech</span>
+                                <span class="metric-label">Data Science ('26)</span>
+                            </div>
+                            <div class="metric-sep"></div>
+                            <div class="metric-unit">
+                                <span class="metric-num">100<span class="num-plus">%</span></span>
+                                <span class="metric-label">Craft & Curiosity</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="metric-divider"></div>
-                    <div class="metric-card">
-                        <span class="metric-value">B.Tech</span>
-                        <span class="metric-label">Data Science ('26)</span>
-                    </div>
-                    <div class="metric-divider"></div>
-                    <div class="metric-card">
-                        <span class="metric-value">100%</span>
-                        <span class="metric-label">Data Driven</span>
-                    </div>
-                </div>
 
-                <div class="hero-cta">
-                    <a href="Nibraas_Navas_Resume.pdf" download="Nibraas_Navas_Resume.pdf" class="btn btn-primary"><i class="fa-solid fa-file-arrow-down"></i> Download Resume</a>
-                    <a href="#projects" class="btn btn-secondary"><i class="fa-solid fa-sparkles"></i> View My Work</a>
-                    <a href="mailto:nibraasnikz@gmail.com" class="btn btn-outline"><i class="fa-solid fa-paper-plane"></i> Contact Me</a>
-                </div>
+                    <div class="hero-visual-frame">
+                        <div class="portrait-wrapper">
+                            <img src="profile.jpg" alt="Nibraas Navas — Data Science & Machine Learning Engineer" class="portrait-img">
+                            
+                            <!-- Floating context chips -->
+                            <div class="float-chip float-chip-top">
+                                <i class="fa-solid fa-microchip"></i>
+                                <span>Edge AI & Computer Vision</span>
+                            </div>
 
-                <div class="hero-socials">
-                    <span class="social-label">Connect:</span>
-                    <a href="https://github.com/NibraasNavas" target="_blank" class="social-link" title="GitHub"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://linkedin.com/in/nibraas-navas" target="_blank" class="social-link" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="mailto:nibraasnikz@gmail.com" class="social-link" title="Email"><i class="fa-solid fa-envelope"></i></a>
-                    <a href="tel:+919656535727" class="social-link" title="Phone"><i class="fa-solid fa-phone"></i></a>
-                    <span class="location-tag"><i class="fa-solid fa-location-dot"></i> Kerala, India</span>
+                            <div class="float-chip float-chip-bottom">
+                                <i class="fa-solid fa-code-branch"></i>
+                                <span>Python · PyTorch · Scikit-learn</span>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
+        </section>
 
-            <div class="hero-visual">
-                <div class="simple-profile-container">
-                    <img src="profile.jpg" alt="Nibraas Navas" class="simple-profile-img">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Summary & About Section -->
-    <section class="section about-section" id="about">
-        <div class="container">
-            <div class="section-header center">
-                <span class="section-subtitle"><i class="fa-regular fa-id-card"></i> Executive Summary</span>
-                <h2 class="section-title">About <span class="gradient-text">Nibraas</span></h2>
-                <div class="title-underline"></div>
-            </div>
-
-            <div class="about-grid">
-                <div class="about-card glass-card main-about">
-                    <div class="card-icon-header">
-                        <div class="icon-box"><i class="fa-solid fa-user-graduate"></i></div>
-                        <h3>Data Science Specialist</h3>
-                    </div>
-                    <p>
-                        I am a recent <strong>Computer Science & Engineering (Data Science)</strong> graduate with hands-on experience building AI-powered analytics platforms, machine learning pipelines, and business intelligence solutions.
-                    </p>
-                    <p>
-                        Proficient in <strong>Python, SQL, Power BI, and Scikit-learn</strong>, I specialize in translating complex dataset insights into high-impact predictive models and computer vision applications.
-                    </p>
-
-                    <div class="about-highlights">
-                        <div class="highlight-item">
-                            <i class="fa-solid fa-circle-check"></i>
-                            <span>End-to-End Machine Learning Workflow (EDA to Model Evaluation)</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fa-solid fa-circle-check"></i>
-                            <span>Computer Vision & Deep Learning (TensorFlow, OpenCV, Dlib)</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fa-solid fa-circle-check"></i>
-                            <span>AI Mobile & API Integration (Gemini API, FastAPI, Flutter)</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fa-solid fa-circle-check"></i>
-                            <span>Data Analytics & BI Dashboards (Power BI, Tableau, Plotly)</span>
-                        </div>
-                    </div>
+        <!-- The Story & Mindset: Humanized Bento Grid -->
+        <section class="section story-section" id="story">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="eyebrow-tag"><i class="fa-regular fa-user"></i> The Story & Mindset</span>
+                    <h2 class="section-title">Behind the <span class="accent-wine">Algorithms</span></h2>
+                    <p class="section-subtitle serif-text">"Data is merely noise until empathy and engineering give it clarity and purpose."</p>
                 </div>
 
-                <div class="about-side-stack">
-                    <div class="glass-card stat-box">
-                        <div class="stat-number">4+</div>
-                        <div class="stat-info">
-                            <h4>Specialized Domains</h4>
-                            <p>ML, Computer Vision, Business Intelligence, Data Engineering</p>
+                <div class="bento-grid">
+                    
+                    <!-- Bento Card 1: The Journey -->
+                    <div class="bento-card bento-card-story">
+                        <div class="card-top-accent"></div>
+                        <div class="bento-header">
+                            <div class="bento-icon"><i class="fa-solid fa-compass-drafting"></i></div>
+                            <div>
+                                <h3 class="bento-title">My Journey & Motivation</h3>
+                                <span class="cat-badge">From Curiosity to Real-World Impact</span>
+                            </div>
                         </div>
+                        <p class="story-lead">
+                            My fascination with data science began with a simple observation: the world generates petabytes of signal every second, yet humans struggle with critical decisions when they need them most.
+                        </p>
+                        <p class="story-body">
+                            Specializing in <strong>Computer Science and Engineering (Data Science)</strong> at SCMS, I dedicated my work to bridging the gap between theoretical machine learning models and pragmatic, production-grade applications. Whether that involves tracking subtle facial fatigue landmarks in a car or converting raw food ingredients into personalized meal plans, I thrive on building software that directly impacts lives.
+                        </p>
                     </div>
 
-                    <div class="glass-card info-list-box">
-                        <h3><i class="fa-solid fa-address-card"></i> Quick Info</h3>
-                        <ul class="info-list">
-                            <li><strong>Degree:</strong> B.Tech CS & Engineering (Data Science)</li>
-                            <li><strong>Institution:</strong> SCMS School of Engineering and Tech</li>
-                            <li><strong>Location:</strong> Kerala, India</li>
-                            <li><strong>Email:</strong> nibraasnikz@gmail.com</li>
-                            <li><strong>Phone:</strong> +91 9656535727</li>
-                            <li><strong>Status:</strong> Available for Immediate Roles</li>
+                    <!-- Bento Card 2: Guiding Engineering Principles -->
+                    <div class="bento-card bento-card-principles">
+                        <div class="card-top-accent"></div>
+                        <div class="bento-header">
+                            <div class="bento-icon blue"><i class="fa-solid fa-shield-halved"></i></div>
+                            <div>
+                                <h3 class="bento-title">Working Principles</h3>
+                                <span class="cat-badge">How I Build Software</span>
+                            </div>
+                        </div>
+                        <ul class="principles-list">
+                            <li class="principle-item">
+                                <span class="p-number">01</span>
+                                <div class="p-content">
+                                    <h4>Real-World Feasibility</h4>
+                                    <p>Prioritizing edge optimization and low latency over un deployable benchmark vanity.</p>
+                                </div>
+                            </li>
+                            <li class="principle-item">
+                                <span class="p-number">02</span>
+                                <div class="p-content">
+                                    <h4>Interpretability & Trust</h4>
+                                    <p>Using SHAP and rigorous validation so stakeholders understand every prediction.</p>
+                                </div>
+                            </li>
+                            <li class="principle-item">
+                                <span class="p-number">03</span>
+                                <div class="p-content">
+                                    <h4>End-to-End Cohesion</h4>
+                                    <p>Connecting ML pipelines cleanly with robust backends (FastAPI) and responsive frontends.</p>
+                                </div>
+                            </li>
                         </ul>
-                        <a href="Nibraas_Navas_Resume.pdf" download="Nibraas_Navas_Resume.pdf" class="btn btn-sm btn-primary btn-block" style="margin-top: 1rem;"><i class="fa-solid fa-download"></i> Download Full Resume</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Technical Skills Section -->
-    <section class="section skills-section" id="skills">
-        <div class="container">
-            <div class="section-header center">
-                <span class="section-subtitle"><i class="fa-solid fa-layer-group"></i> Technical Expertise</span>
-                <h2 class="section-title">Skills & <span class="gradient-text">Competencies</span></h2>
-                <p class="section-desc">Comprehensive toolkit across programming, analytics, ML modeling, visualization, and developer tools.</p>
-                <div class="title-underline"></div>
-            </div>
-
-            <!-- Filter Tabs -->
-            <div class="skills-filter">
-                <button class="filter-btn active" data-filter="all">All Skills</button>
-                <button class="filter-btn" data-filter="programming">Programming</button>
-                <button class="filter-btn" data-filter="analytics">Data Analytics</button>
-                <button class="filter-btn" data-filter="ml">Machine Learning</button>
-                <button class="filter-btn" data-filter="visualization">Visualization</button>
-                <button class="filter-btn" data-filter="tools">Tools & Tech</button>
-            </div>
-
-            <!-- Skills Grid -->
-            <div class="skills-grid">
-
-                <!-- Programming -->
-                <div class="skill-category-card glass-card" data-category="programming">
-                    <div class="category-header">
-                        <div class="cat-icon bg-lavender"><i class="fa-solid fa-code"></i></div>
-                        <div>
-                            <h3>Programming</h3>
-                            <span>Core Engineering Languages</span>
-                        </div>
-                    </div>
-                    <div class="skill-tags">
-                        <div class="skill-pill"><i class="fa-brands fa-python"></i> Python <span class="level">Advanced</span></div>
-                        <div class="skill-pill"><i class="fa-solid fa-database"></i> SQL <span class="level">Proficient</span></div>
-                        <div class="skill-pill"><i class="fa-solid fa-cubes"></i> Django <span class="level">Intermediate</span></div>
-                        <div class="skill-pill"><i class="fa-solid fa-bolt"></i> FastAPI <span class="level">Proficient</span></div>
-                    </div>
-                </div>
-
-                <!-- Data Analytics -->
-                <div class="skill-category-card glass-card" data-category="analytics">
-                    <div class="category-header">
-                        <div class="cat-icon bg-mint"><i class="fa-solid fa-chart-pie"></i></div>
-                        <div>
-                            <h3>Data Analytics</h3>
-                            <span>Insights & Data Wrangling</span>
-                        </div>
-                    </div>
-                    <div class="skill-tags">
-                        <div class="skill-pill">Pandas</div>
-                        <div class="skill-pill">NumPy</div>
-                        <div class="skill-pill">Data Cleaning</div>
-                        <div class="skill-pill">EDA (Exploratory Analysis)</div>
-                        <div class="skill-pill">Statistical Analysis</div>
-                        <div class="skill-pill">Feature Engineering</div>
-                    </div>
-                </div>
-
-                <!-- Machine Learning -->
-                <div class="skill-category-card glass-card" data-category="ml">
-                    <div class="category-header">
-                        <div class="cat-icon bg-peach"><i class="fa-solid fa-brain"></i></div>
-                        <div>
-                            <h3>Machine Learning & AI</h3>
-                            <span>Predictive Modeling & CV</span>
-                        </div>
-                    </div>
-                    <div class="skill-tags">
-                        <div class="skill-pill">Scikit-learn</div>
-                        <div class="skill-pill">Regression & Classification</div>
-                        <div class="skill-pill">Model Evaluation</div>
-                        <div class="skill-pill">SHAP (Model Explainability)</div>
-                        <div class="skill-pill">TensorFlow</div>
-                        <div class="skill-pill">OpenCV & Dlib</div>
-                    </div>
-                </div>
-
-                <!-- Visualization -->
-                <div class="skill-category-card glass-card" data-category="visualization">
-                    <div class="category-header">
-                        <div class="cat-icon bg-sky"><i class="fa-solid fa-chart-column"></i></div>
-                        <div>
-                            <h3>Data Visualization</h3>
-                            <span>Dashboards & Storytelling</span>
-                        </div>
-                    </div>
-                    <div class="skill-tags">
-                        <div class="skill-pill">Power BI</div>
-                        <div class="skill-pill">Tableau</div>
-                        <div class="skill-pill">Plotly</div>
-                        <div class="skill-pill">Matplotlib</div>
-                        <div class="skill-pill">Seaborn</div>
-                    </div>
-                </div>
-
-                <!-- Tools & Frameworks -->
-                <div class="skill-category-card glass-card" data-category="tools">
-                    <div class="category-header">
-                        <div class="cat-icon bg-lavender"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-                        <div>
-                            <h3>Developer Tools</h3>
-                            <span>Environments & Platforms</span>
-                        </div>
-                    </div>
-                    <div class="skill-tags">
-                        <div class="skill-pill"><i class="fa-brands fa-git-alt"></i> Git</div>
-                        <div class="skill-pill"><i class="fa-brands fa-github"></i> GitHub</div>
-                        <div class="skill-pill"><i class="fa-solid fa-play"></i> Streamlit</div>
-                        <div class="skill-pill">VS Code</div>
-                        <div class="skill-pill">Jupyter Notebook</div>
-                        <div class="skill-pill">Excel</div>
-                        <div class="skill-pill">Raspberry Pi</div>
-                        <div class="skill-pill">Flutter & Dart</div>
-                        <div class="skill-pill">Firebase & Hive</div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="section projects-section" id="projects">
-        <div class="container">
-            <div class="section-header center">
-                <span class="section-subtitle"><i class="fa-solid fa-laptop-code"></i> Portfolio Highlights</span>
-                <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
-                <p class="section-desc">Building practical, AI-driven solutions combining Computer Vision, Machine Learning, and Mobile Frameworks.</p>
-                <div class="title-underline"></div>
-            </div>
-
-            <div class="projects-grid">
-
-                <!-- Project 1: Driver Drowsiness Detection -->
-                <div class="project-card glass-card">
-                    <div class="project-img-wrapper">
-                        <img src="drowsiness.jpg" alt="Driver Drowsiness Detection System" class="project-img">
-                        <div class="project-badge"><i class="fa-solid fa-eye"></i> Computer Vision</div>
                     </div>
 
-                    <div class="project-content">
-                        <div class="project-header">
-                            <h3 class="project-title">Driver Drowsiness Detection System</h3>
-                            <div class="project-tech-stack">
-                                <span class="tech-tag">Python</span>
-                                <span class="tech-tag">TensorFlow</span>
-                                <span class="tech-tag">OpenCV</span>
-                                <span class="tech-tag">Dlib</span>
-                                <span class="tech-tag">Raspberry Pi</span>
+                    <!-- Bento Card 3: What I'm Currently Exploring -->
+                    <div class="bento-card bento-card-learning">
+                        <div class="card-top-accent"></div>
+                        <div class="bento-header">
+                            <div class="bento-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                            <div>
+                                <h3 class="bento-title">Currently Tinkering & Researching</h3>
+                                <span class="cat-badge">Continuous Exploration</span>
                             </div>
                         </div>
+                        <p class="story-body">
+                            Beyond standard tabular and vision models, I spend my time exploring modern generative multimodal workflows, on-device model quantization, and autonomous AI agents.
+                        </p>
+                        <div class="exploring-tags">
+                            <span class="explore-pill"><i class="fa-solid fa-wand-magic-sparkles"></i> Multimodal Vision-LLMs</span>
+                            <span class="explore-pill"><i class="fa-solid fa-gauge-high"></i> Edge Quantization</span>
+                            <span class="explore-pill"><i class="fa-solid fa-diagram-project"></i> SHAP Explainability</span>
+                            <span class="explore-pill"><i class="fa-solid fa-bolt"></i> Async FastAPI Services</span>
+                            <span class="explore-pill"><i class="fa-solid fa-database"></i> Vector Databases & RAG</span>
+                        </div>
+                    </div>
 
-                        <p class="project-description">
-                            Developed a real-time driver drowsiness detection system utilizing deep learning and computer vision. The system analyzes camera video feeds to track facial landmarks, detecting signs such as eye closure (PERCLOS) and yawning to trigger immediate audio/visual alerts.
+                    <!-- Bento Card 4: Quick Snapshot -->
+                    <div class="bento-card bento-card-quickfacts">
+                        <div class="card-top-accent"></div>
+                        <div class="bento-header">
+                            <div class="bento-icon blue"><i class="fa-regular fa-id-card"></i></div>
+                            <div>
+                                <h3 class="bento-title">Quick Snapshot</h3>
+                                <span class="cat-badge">Profile At A Glance</span>
+                            </div>
+                        </div>
+                        <div class="facts-grid">
+                            <div class="fact-item">
+                                <span class="fact-label">Location</span>
+                                <span class="fact-value">Kerala, India</span>
+                            </div>
+                            <div class="fact-item">
+                                <span class="fact-label">Academic Path</span>
+                                <span class="fact-value">B.Tech CSE (Data Science)</span>
+                            </div>
+                            <div class="fact-item">
+                                <span class="fact-label">Institution</span>
+                                <span class="fact-value">SCMS School of Engineering</span>
+                            </div>
+                            <div class="fact-item">
+                                <span class="fact-label">Primary Languages</span>
+                                <span class="fact-value">Python, SQL, Dart</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Craft & Toolkit: Skills Showcase -->
+        <section class="section craft-section" id="craft">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="eyebrow-tag blue"><i class="fa-solid fa-screwdriver-wrench"></i> Technical Mastery</span>
+                    <h2 class="section-title">The Craft & <span class="accent-blue">Toolkit</span></h2>
+                    <p class="section-subtitle">A curated ecosystem of languages, frameworks, mathematical foundations, and developer tools applied in production.</p>
+                </div>
+
+                <!-- Filter Navigation -->
+                <div class="skills-filter-nav">
+                    <button class="filter-chip active" data-filter="all"><i class="fa-solid fa-border-all"></i> All Competencies</button>
+                    <button class="filter-chip" data-filter="ml"><i class="fa-solid fa-brain"></i> Machine Learning & AI</button>
+                    <button class="filter-chip" data-filter="analytics"><i class="fa-solid fa-chart-pie"></i> Data Analytics</button>
+                    <button class="filter-chip" data-filter="backend"><i class="fa-solid fa-server"></i> APIs & Backend</button>
+                    <button class="filter-chip" data-filter="viz"><i class="fa-solid fa-chart-column"></i> Visualization</button>
+                    <button class="filter-chip" data-filter="tools"><i class="fa-solid fa-laptop-code"></i> Developer Tools</button>
+                </div>
+
+                <!-- Skills Matrix Grid -->
+                <div class="skills-matrix-grid">
+
+                    <!-- ML & AI Card -->
+                    <div class="skill-matrix-card" data-category="ml">
+                        <div>
+                            <div class="card-cat-meta">
+                                <span class="cat-badge"><i class="fa-solid fa-brain"></i> Intelligence</span>
+                                <div class="cat-icon-wrap"><i class="fa-solid fa-microchip"></i></div>
+                            </div>
+                            <h3 class="skill-card-title">Machine Learning & Vision</h3>
+                            <p class="skill-card-subtitle">Building predictive intelligence and computer vision models.</p>
+                        </div>
+                        <div class="skill-tokens">
+                            <span class="skill-token proficient"><i class="fa-brands fa-python"></i> Scikit-learn</span>
+                            <span class="skill-token proficient"><i class="fa-solid fa-eye"></i> OpenCV</span>
+                            <span class="skill-token"><i class="fa-solid fa-network-wired"></i> TensorFlow</span>
+                            <span class="skill-token">Dlib Facial Landmarks</span>
+                            <span class="skill-token">Regression & Classification</span>
+                            <span class="skill-token">SHAP (Model Explainability)</span>
+                            <span class="skill-token">Feature Engineering</span>
+                            <span class="skill-token">Model Validation & Cross-Val</span>
+                        </div>
+                    </div>
+
+                    <!-- Data Analytics Card -->
+                    <div class="skill-matrix-card" data-category="analytics">
+                        <div>
+                            <div class="card-cat-meta">
+                                <span class="cat-badge"><i class="fa-solid fa-chart-pie"></i> Wrangling</span>
+                                <div class="cat-icon-wrap"><i class="fa-solid fa-filter"></i></div>
+                            </div>
+                            <h3 class="skill-card-title">Data Analytics & Statistics</h3>
+                            <p class="skill-card-subtitle">Transforming raw unstructured data into actionable insights.</p>
+                        </div>
+                        <div class="skill-tokens">
+                            <span class="skill-token proficient">Pandas</span>
+                            <span class="skill-token proficient">NumPy</span>
+                            <span class="skill-token proficient"><i class="fa-solid fa-database"></i> SQL (Queries & Aggregations)</span>
+                            <span class="skill-token">Exploratory Data Analysis (EDA)</span>
+                            <span class="skill-token">Statistical Inference</span>
+                            <span class="skill-token">Data Cleaning Pipelines</span>
+                            <span class="skill-token">Missing Value Imputation</span>
+                        </div>
+                    </div>
+
+                    <!-- APIs & Backend Card -->
+                    <div class="skill-matrix-card" data-category="backend">
+                        <div>
+                            <div class="card-cat-meta">
+                                <span class="cat-badge"><i class="fa-solid fa-server"></i> Architecture</span>
+                                <div class="cat-icon-wrap"><i class="fa-solid fa-bolt"></i></div>
+                            </div>
+                            <h3 class="skill-card-title">Backend & Model Serving</h3>
+                            <p class="skill-card-subtitle">Production endpoints and application orchestration.</p>
+                        </div>
+                        <div class="skill-tokens">
+                            <span class="skill-token proficient"><i class="fa-solid fa-bolt"></i> FastAPI</span>
+                            <span class="skill-token"><i class="fa-solid fa-cubes"></i> Django</span>
+                            <span class="skill-token">RESTful API Design</span>
+                            <span class="skill-token">Gemini API Integration</span>
+                            <span class="skill-token">Firebase Auth & DB</span>
+                            <span class="skill-token">Flutter & Dart UI</span>
+                        </div>
+                    </div>
+
+                    <!-- Visualization Card -->
+                    <div class="skill-matrix-card" data-category="viz">
+                        <div>
+                            <div class="card-cat-meta">
+                                <span class="cat-badge"><i class="fa-solid fa-chart-column"></i> Storytelling</span>
+                                <div class="cat-icon-wrap"><i class="fa-solid fa-presentation-screen"></i></div>
+                            </div>
+                            <h3 class="skill-card-title">Data Storytelling & BI</h3>
+                            <p class="skill-card-subtitle">Executive dashboards and interactive analytical charts.</p>
+                        </div>
+                        <div class="skill-tokens">
+                            <span class="skill-token proficient"><i class="fa-solid fa-chart-simple"></i> Power BI</span>
+                            <span class="skill-token">Tableau</span>
+                            <span class="skill-token">Plotly (Interactive)</span>
+                            <span class="skill-token">Matplotlib</span>
+                            <span class="skill-token">Seaborn</span>
+                            <span class="skill-token">Business Intelligence Reports</span>
+                        </div>
+                    </div>
+
+                    <!-- Developer Tools Card -->
+                    <div class="skill-matrix-card" data-category="tools">
+                        <div>
+                            <div class="card-cat-meta">
+                                <span class="cat-badge"><i class="fa-solid fa-laptop-code"></i> Ecosystem</span>
+                                <div class="cat-icon-wrap"><i class="fa-solid fa-code"></i></div>
+                            </div>
+                            <h3 class="skill-card-title">Tools & Edge Environments</h3>
+                            <p class="skill-card-subtitle">Development environments, version control, and hardware.</p>
+                        </div>
+                        <div class="skill-tokens">
+                            <span class="skill-token proficient"><i class="fa-brands fa-git-alt"></i> Git & GitHub</span>
+                            <span class="skill-token proficient"><i class="fa-solid fa-microchip"></i> Raspberry Pi (Edge Deploy)</span>
+                            <span class="skill-token">Streamlit</span>
+                            <span class="skill-token">Jupyter Notebooks</span>
+                            <span class="skill-token">VS Code</span>
+                            <span class="skill-token">Hive (NoSQL Mobile)</span>
+                            <span class="skill-token">Microsoft Excel</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Case Studies (Projects Section) -->
+        <section class="section projects-section" id="projects">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="eyebrow-tag"><i class="fa-solid fa-laptop-code"></i> Featured Case Studies</span>
+                    <h2 class="section-title">Applied <span class="accent-wine">Solutions</span></h2>
+                    <p class="section-subtitle">Real-world engineering projects combining Computer Vision, Generative AI, and Edge Hardware.</p>
+                </div>
+
+                <div class="case-studies-stack">
+
+                    <!-- Case Study 1: Driver Drowsiness Detection -->
+                    <article class="case-card">
+                        <div class="case-preview">
+                            <span class="case-pill-badge"><i class="fa-solid fa-eye"></i> Computer Vision & Edge AI</span>
+                            <img src="drowsiness.jpg" alt="AwareDrive Driver Drowsiness Detection System" class="case-img">
+                        </div>
+
+                        <div class="case-body">
+                            <div class="case-story-block">
+                                <h3 class="case-headline">AwareDrive: Real-Time Driver Drowsiness & Fatigue Detection</h3>
+                                
+                                <div class="case-impact-quote">
+                                    <span>The Human Impact:</span> Driver fatigue is a primary factor in over 20% of severe traffic collisions. AwareDrive provides continuous, non-invasive edge monitoring to save lives before micro-sleep occurs.
+                                </div>
+
+                                <p class="case-desc">
+                                    Engineered an embedded real-time computer vision system capable of monitoring driver alertness under variable lighting conditions. The system captures live video streams, applies 68-point facial landmark regression via Dlib and OpenCV, and computes Eye Aspect Ratio (EAR) and Mouth Aspect Ratio (MAR) metrics to detect involuntary micro-sleep and repeated yawning.
+                                </p>
+
+                                <ul class="case-highlights-list">
+                                    <li class="case-highlight-item">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                        <span>Instant acoustic and visual alarm triggers on consecutive eye closure threshold violations (PERCLOS).</span>
+                                    </li>
+                                    <li class="case-highlight-item">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                        <span>Standalone deployment on <strong>Raspberry Pi</strong> edge hardware with low latency processing.</span>
+                                    </li>
+                                    <li class="case-highlight-item">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                        <span>Robust facial tracking resilient against head pose variations and brief occlusions.</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="case-tech-strip">
+                                <span class="tech-tag-pill">Python</span>
+                                <span class="tech-tag-pill">TensorFlow</span>
+                                <span class="tech-tag-pill">OpenCV</span>
+                                <span class="tech-tag-pill">Dlib</span>
+                                <span class="tech-tag-pill">Raspberry Pi</span>
+                                <span class="tech-tag-pill">Real-Time Telemetry</span>
+                            </div>
+
+                            <div class="case-footer-actions">
+                                <a href="https://github.com/george-jose-07/driver_drowsiness_detection" target="_blank" class="btn btn-primary btn-sm">
+                                    <i class="fa-brands fa-github"></i> View GitHub Repository
+                                </a>
+                                <a href="#contact" class="btn btn-outline btn-sm">
+                                    <i class="fa-regular fa-paper-plane"></i> Discuss This Project
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Case Study 2: Recipe Wizard -->
+                    <article class="case-card reverse">
+                        <div class="case-preview">
+                            <span class="case-pill-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> Generative AI & Mobile</span>
+                            <img src="recipe.jpg" alt="Recipe Wizard AI Generator" class="case-img">
+                        </div>
+
+                        <div class="case-body">
+                            <div class="case-story-block">
+                                <h3 class="case-headline">Recipe Wizard: Multimodal Vision-Powered AI Culinary Assistant</h3>
+                                
+                                <div class="case-impact-quote">
+                                    <span>The Human Impact:</span> Tackles household food waste and culinary decision fatigue by transforming random kitchen ingredients into healthy, tailored recipes in seconds.
+                                </div>
+
+                                <p class="case-desc">
+                                    Developed a cross-platform mobile application combining Google Gemini's multimodal vision capabilities with a responsive Flutter architecture. Users snap a photo of whatever is in their pantry or refrigerator; the system recognizes individual ingredients, takes into account dietary restrictions (e.g., vegan, gluten-free, low-carb), and generates step-by-step cooking instructions with nutritional breakdowns.
+                                </p>
+
+                                <ul class="case-highlights-list">
+                                    <li class="case-highlight-item">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                        <span>Multimodal vision prompt engineering leveraging the <strong>Gemini API</strong> for high accuracy ingredient extraction.</span>
+                                    </li>
+                                    <li class="case-highlight-item">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                        <span>Offline-first recipe bookmarking and caching using <strong>Hive</strong> local storage.</span>
+                                    </li>
+                                    <li class="case-highlight-item">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                        <span>Cloud synchronization and cross-device favorites management backed by <strong>Firebase</strong>.</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="case-tech-strip">
+                                <span class="tech-tag-pill">Flutter</span>
+                                <span class="tech-tag-pill">Dart</span>
+                                <span class="tech-tag-pill">Gemini API</span>
+                                <span class="tech-tag-pill">Hive NoSQL</span>
+                                <span class="tech-tag-pill">Firebase</span>
+                                <span class="tech-tag-pill">Multimodal AI</span>
+                            </div>
+
+                            <div class="case-footer-actions">
+                                <a href="https://github.com/george-jose-07/recipe_wizard" target="_blank" class="btn btn-primary btn-sm">
+                                    <i class="fa-brands fa-github"></i> View GitHub Repository
+                                </a>
+                                <a href="#contact" class="btn btn-outline btn-sm">
+                                    <i class="fa-regular fa-paper-plane"></i> Discuss This Project
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Academic Trail (Education Section) -->
+        <section class="section education-section" id="education">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="eyebrow-tag blue"><i class="fa-solid fa-graduation-cap"></i> Academic Foundation</span>
+                    <h2 class="section-title">Education & <span class="accent-blue">Milestones</span></h2>
+                    <p class="section-subtitle">Rigorous foundational training in computer science, statistics, algorithms, and distributed systems.</p>
+                </div>
+
+                <div class="timeline-path">
+                    
+                    <!-- Milestone 1 -->
+                    <div class="timeline-node">
+                        <div class="node-pin"></div>
+                        <div class="timeline-content-card">
+                            <div class="node-header">
+                                <h3 class="node-degree">B.Tech in Computer Science and Engineering (Data Science)</h3>
+                                <span class="node-date-badge"><i class="fa-regular fa-calendar"></i> 2022 – 2026</span>
+                            </div>
+                            <div class="node-institution">
+                                <i class="fa-solid fa-building-columns"></i> SCMS School of Engineering and Technology · Kerala, India
+                            </div>
+                            <p class="node-description">
+                                Comprehensive specialization emphasizing modern machine learning pipelines, deep learning, statistical modeling, database systems (SQL/NoSQL), algorithm design, and data structures. Actively engaged in hands-on computer vision engineering and practical AI development.
+                            </p>
+                            <div class="node-tags">
+                                <span class="node-tag">Data Structures & Algorithms</span>
+                                <span class="node-tag">Machine Learning</span>
+                                <span class="node-tag">Statistical Analysis</span>
+                                <span class="node-tag">Database Management</span>
+                                <span class="node-tag">Computer Vision</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 2 -->
+                    <div class="timeline-node">
+                        <div class="node-pin"></div>
+                        <div class="timeline-content-card">
+                            <div class="node-header">
+                                <h3 class="node-degree">Higher Secondary Education (Science & Computer Stream)</h3>
+                                <span class="node-date-badge"><i class="fa-regular fa-calendar"></i> 2020 – 2022</span>
+                            </div>
+                            <div class="node-institution">
+                                <i class="fa-solid fa-school"></i> Aleemul Islam Higher Secondary School · Kerala, India
+                            </div>
+                            <p class="node-description">
+                                Built core quantitative fundamentals with extensive coursework in Mathematics, Physics, Chemistry, and introductory Computer Science.
+                            </p>
+                            <div class="node-tags">
+                                <span class="node-tag">Advanced Mathematics</span>
+                                <span class="node-tag">Physics</span>
+                                <span class="node-tag">Computer Science Basics</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section & Humanized Message Presets -->
+        <section class="section contact-section" id="contact">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="eyebrow-tag"><i class="fa-regular fa-paper-plane"></i> Start A Conversation</span>
+                    <h2 class="section-title">Let's Build Something <span class="accent-wine">Meaningful</span></h2>
+                    <p class="section-subtitle">Whether you're hiring for a Data Science or ML role, looking for a project collaboration, or just want to exchange ideas, my inbox is always open.</p>
+                </div>
+
+                <div class="contact-grid-wrap">
+
+                    <!-- Direct Contact Card -->
+                    <div class="contact-direct-card">
+                        <h3 class="contact-card-title">Direct Reach</h3>
+                        <p class="contact-lead-text">
+                            I am actively seeking full-time and project opportunities in Data Science, Machine Learning Engineering, and AI Development.
                         </p>
 
-                        <div class="project-features">
-                            <div class="feat-item"><i class="fa-solid fa-check"></i> Real-time eye closure & yawn duration analysis</div>
-                            <div class="feat-item"><i class="fa-solid fa-check"></i> Embedded edge hardware deployment with Raspberry Pi</div>
-                            <div class="feat-item"><i class="fa-solid fa-check"></i> High accuracy facial landmark tracking via Dlib & OpenCV</div>
-                        </div>
-
-                        <div class="project-actions">
-                            <a href="https://github.com/george-jose-07/driver_drowsiness_detection" target="_blank" class="btn btn-sm btn-primary">
-                                <i class="fa-brands fa-github"></i> View Repository
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2: Recipe Wizard -->
-                <div class="project-card glass-card">
-                    <div class="project-img-wrapper">
-                        <img src="recipe.jpg" alt="Recipe Wizard AI Generator" class="project-img">
-                        <div class="project-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> Generative AI</div>
-                    </div>
-
-                    <div class="project-content">
-                        <div class="project-header">
-                            <h3 class="project-title">Recipe Wizard: AI Recipe Generator</h3>
-                            <div class="project-tech-stack">
-                                <span class="tech-tag">Flutter</span>
-                                <span class="tech-tag">Dart</span>
-                                <span class="tech-tag">Gemini API</span>
-                                <span class="tech-tag">Hive</span>
-                                <span class="tech-tag">Firebase</span>
+                        <div class="contact-channels">
+                            
+                            <!-- Email -->
+                            <div class="channel-box">
+                                <div class="channel-left">
+                                    <div class="channel-icon-wrap"><i class="fa-solid fa-envelope"></i></div>
+                                    <div class="channel-meta">
+                                        <span class="channel-label">Email Address</span>
+                                        <a href="mailto:nibraasnikz@gmail.com" class="channel-value">nibraasnikz@gmail.com</a>
+                                    </div>
+                                </div>
+                                <button class="channel-action-btn copy-btn" data-copy="nibraasnikz@gmail.com" title="Copy email address">
+                                    <i class="fa-regular fa-copy"></i>
+                                </button>
                             </div>
+
+                            <!-- Phone -->
+                            <div class="channel-box">
+                                <div class="channel-left">
+                                    <div class="channel-icon-wrap blue"><i class="fa-solid fa-phone"></i></div>
+                                    <div class="channel-meta">
+                                        <span class="channel-label">Phone / WhatsApp</span>
+                                        <a href="tel:+919656535727" class="channel-value">+91 9656535727</a>
+                                    </div>
+                                </div>
+                                <a href="tel:+919656535727" class="channel-action-btn" title="Call or WhatsApp">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
+
+                            <!-- LinkedIn -->
+                            <div class="channel-box">
+                                <div class="channel-left">
+                                    <div class="channel-icon-wrap"><i class="fa-brands fa-linkedin-in"></i></div>
+                                    <div class="channel-meta">
+                                        <span class="channel-label">LinkedIn</span>
+                                        <a href="https://linkedin.com/in/nibraas-navas" target="_blank" class="channel-value">linkedin.com/in/nibraas-navas</a>
+                                    </div>
+                                </div>
+                                <a href="https://linkedin.com/in/nibraas-navas" target="_blank" class="channel-action-btn" title="Visit LinkedIn Profile">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
+
+                            <!-- GitHub -->
+                            <div class="channel-box">
+                                <div class="channel-left">
+                                    <div class="channel-icon-wrap blue"><i class="fa-brands fa-github"></i></div>
+                                    <div class="channel-meta">
+                                        <span class="channel-label">GitHub</span>
+                                        <a href="https://github.com/NibraasNavas" target="_blank" class="channel-value">github.com/NibraasNavas</a>
+                                    </div>
+                                </div>
+                                <a href="https://github.com/NibraasNavas" target="_blank" class="channel-action-btn" title="Visit GitHub Profile">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
+
+                            <!-- Location -->
+                            <div class="channel-box">
+                                <div class="channel-left">
+                                    <div class="channel-icon-wrap"><i class="fa-solid fa-location-dot"></i></div>
+                                    <div class="channel-meta">
+                                        <span class="channel-label">Location</span>
+                                        <span class="channel-value">Kerala, India (Open to Remote & Relocation)</span>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
 
-                        <p class="project-description">
-                            Developed an AI-powered cross-platform mobile application that generates custom culinary recipes based on camera-captured ingredient photos and dietary preferences. Features offline recipe bookmarking with Hive and user synchronization via Firebase.
-                        </p>
-
-                        <div class="project-features">
-                            <div class="feat-item"><i class="fa-solid fa-check"></i> Multimodal vision AI processing via Gemini API</div>
-                            <div class="feat-item"><i class="fa-solid fa-check"></i> Fast local storage & favorites history using Hive</div>
-                            <div class="feat-item"><i class="fa-solid fa-check"></i> Smooth Flutter UI with customizable macro & allergy filters</div>
-                        </div>
-
-                        <div class="project-actions">
-                            <a href="https://github.com/george-jose-07/recipe_wizard" target="_blank" class="btn btn-sm btn-primary">
-                                <i class="fa-brands fa-github"></i> View Repository
-                            </a>
-                        </div>
+                        <a href="Nibraas_Navas_Resume.pdf" download="Nibraas_Navas_Resume.pdf" class="btn btn-primary btn-block">
+                            <i class="fa-solid fa-download"></i> Download Full Resume (PDF)
+                        </a>
                     </div>
-                </div>
 
+                    <!-- Interactive Message Form -->
+                    <div class="contact-form-card">
+                        <h3 class="contact-card-title">Send a Note</h3>
+                        <p class="contact-lead-text">Choose a quick starter chip below or write your custom message.</p>
+
+                        <!-- Quick Message Starters -->
+                        <span class="preset-section-label">Quick Message Starters:</span>
+                        <div class="message-presets">
+                            <button type="button" class="preset-chip" data-preset="hiring">💼 Discuss a Job Role</button>
+                            <button type="button" class="preset-chip" data-preset="collab">🤝 Project Collaboration</button>
+                            <button type="button" class="preset-chip" data-preset="cv">👁️ Computer Vision Inquiry</button>
+                            <button type="button" class="preset-chip" data-preset="hello">☕ Just Saying Hello</button>
+                        </div>
+
+                        <form id="contact-form" onsubmit="handleFormSubmit(event)">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Your Name</label>
+                                <input type="text" id="name" class="form-input" required placeholder="e.g. Alex Morgan">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="form-label">Your Email</label>
+                                <input type="email" id="email" class="form-input" required placeholder="alex@company.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" id="subject" class="form-input" required placeholder="Data Science / ML Role Discussion">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea id="message" class="form-textarea" rows="4" required placeholder="Hello Nibraas, I reviewed your work on Driver Drowsiness Detection and would love to discuss..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block" id="submit-btn">
+                                <i class="fa-solid fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Education Section -->
-    <section class="section education-section" id="education">
-        <div class="container">
-            <div class="section-header center">
-                <span class="section-subtitle"><i class="fa-solid fa-graduation-cap"></i> Academic Foundation</span>
-                <h2 class="section-title">Education & <span class="gradient-text">Background</span></h2>
-                <div class="title-underline"></div>
-            </div>
-
-            <div class="timeline-container">
-
-                <div class="timeline-item glass-card">
-                    <div class="timeline-badge"><i class="fa-solid fa-university"></i></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div>
-                                <h3>B.Tech in Computer Science and Engineering (Data Science)</h3>
-                                <h4>SCMS School of Engineering and Technology</h4>
-                            </div>
-                            <span class="timeline-date"><i class="fa-regular fa-calendar"></i> 2022 – 2026</span>
-                        </div>
-                        <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Kerala, India</p>
-                        <p class="timeline-desc">
-                            Specialized curriculum focused on Data Structures, Algorithms, Machine Learning, Statistical Analysis, Database Management Systems, and Artificial Intelligence.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="timeline-item glass-card">
-                    <div class="timeline-badge"><i class="fa-solid fa-school"></i></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div>
-                                <h3>Higher Secondary Education (Science & Computer Stream)</h3>
-                                <h4>Aleemul Islam Higher Secondary School</h4>
-                            </div>
-                            <span class="timeline-date"><i class="fa-regular fa-calendar"></i> 2020 – 2022</span>
-                        </div>
-                        <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Kerala, India</p>
-                        <p class="timeline-desc">
-                            Completed higher secondary coursework with a strong emphasis on Mathematics, Physics, Chemistry, and Computer Science fundamentals.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact & Connect Section -->
-    <section class="section contact-section" id="contact">
-        <div class="container">
-            <div class="section-header center">
-                <span class="section-subtitle"><i class="fa-regular fa-paper-plane"></i> Get In Touch</span>
-                <h2 class="section-title">Let's Work <span class="gradient-text">Together</span></h2>
-                <p class="section-desc">Whether you have a Data Science opportunity, ML collaboration, or project inquiry, feel free to reach out!</p>
-                <div class="title-underline"></div>
-            </div>
-
-            <div class="contact-grid">
-
-                <div class="contact-info-card glass-card">
-                    <h3>Contact Information</h3>
-                    <p>I am actively seeking roles in Data Science, Machine Learning Engineering, and AI Development.</p>
-
-                    <div class="contact-methods">
-                        <div class="c-method">
-                            <div class="c-icon"><i class="fa-solid fa-envelope"></i></div>
-                            <div>
-                                <span>Email</span>
-                                <strong><a href="mailto:nibraasnikz@gmail.com">nibraasnikz@gmail.com</a></strong>
-                                <button class="copy-btn" data-copy="nibraasnikz@gmail.com" title="Copy Email"><i class="fa-regular fa-copy"></i></button>
-                            </div>
-                        </div>
-
-                        <div class="c-method">
-                            <div class="c-icon"><i class="fa-solid fa-phone"></i></div>
-                            <div>
-                                <span>Phone / WhatsApp</span>
-                                <strong><a href="tel:+919656535727">+91 9656535727</a></strong>
-                            </div>
-                        </div>
-
-                        <div class="c-method">
-                            <div class="c-icon"><i class="fa-solid fa-location-dot"></i></div>
-                            <div>
-                                <span>Location</span>
-                                <strong>Kerala, India</strong>
-                            </div>
-                        </div>
-
-                        <div class="c-method">
-                            <div class="c-icon"><i class="fa-brands fa-linkedin"></i></div>
-                            <div>
-                                <span>LinkedIn Profile</span>
-                                <strong><a href="https://linkedin.com/in/nibraas-navas" target="_blank">linkedin.com/in/nibraas-navas</a></strong>
-                            </div>
-                        </div>
-
-                        <div class="c-method">
-                            <div class="c-icon"><i class="fa-brands fa-github"></i></div>
-                            <div>
-                                <span>GitHub Repository</span>
-                                <strong><a href="https://github.com/NibraasNavas" target="_blank">github.com/NibraasNavas</a></strong>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contact-form-card glass-card">
-                    <h3>Send Me a Message</h3>
-                    <form id="contact-form" onsubmit="handleFormSubmit(event)">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" required placeholder="John Doe">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input type="email" id="email" required placeholder="john@example.com">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" required placeholder="Data Science Role / Collaboration Inquiry">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" rows="4" required placeholder="Hello Nibraas, I loved your portfolio..."></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary btn-block">
-                            <i class="fa-solid fa-paper-plane"></i> Send Message
-                        </button>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-    </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container footer-container">
-            <div class="footer-left">
-                <span class="logo-text">Nibraas Navas</span>
-                <p>Data Science & Machine Learning Engineer · Kerala, India</p>
-            </div>
-            
-            <div class="footer-links">
-                <a href="#hero">Home</a>
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#education">Education</a>
-                <a href="#contact">Contact</a>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand-info">
+                    <h4 class="footer-brand-title">Nibraas Navas<span class="brand-dot">.</span></h4>
+                    <p class="footer-brand-desc">Data Science & Machine Learning Engineer based in Kerala, India. Dedicated to crafting explainable, human-centered intelligent software.</p>
+                </div>
+
+                <div class="footer-nav-links">
+                    <a href="#hero" class="footer-link">Home</a>
+                    <a href="#story" class="footer-link">The Story</a>
+                    <a href="#craft" class="footer-link">Craft</a>
+                    <a href="#projects" class="footer-link">Case Studies</a>
+                    <a href="#education" class="footer-link">Education</a>
+                    <a href="#contact" class="footer-link">Contact</a>
+                </div>
             </div>
 
-            <div class="footer-right">
-                <a href="#hero" class="back-to-top" title="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Nibraas Navas. Designed with precision in Smokey Blue & Morlet Red.</p>
+                <a href="#hero" class="back-to-top-btn" title="Back to top">
+                    <i class="fa-solid fa-arrow-up"></i>
+                </a>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Nibraas Navas. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Toast Notification Container -->
+    <!-- Toast Notification Target -->
     <div id="toast-container" class="toast-container"></div>
 
-    <!-- JavaScript File -->
+    <!-- Scripts -->
     <script src="script.js"></script>
 </body>
 </html>
