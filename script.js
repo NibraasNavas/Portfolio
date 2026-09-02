@@ -25,97 +25,21 @@ function showToast(message, isSuccess = true) {
         toast.style.transform = 'translateY(10px)';
         toast.style.transition = 'all 0.3s ease';
         setTimeout(() => toast.remove(), 300);
-    }, 4000);
+    }, 4500);
 }
 
-// Global expose
 window.showToast = showToast;
 
-// --- Real Email Delivery Form Handler via FormSubmit.co AJAX ---
-async function handleFormSubmit(e) {
-    if (e) e.preventDefault();
-    
-    const form = document.getElementById('contact-form');
-    const submitBtn = document.getElementById('submit-btn') || (form ? form.querySelector('button[type="submit"]') : null);
-    const nameInput = document.getElementById('name');
-    const emailInput = document.getElementById('email');
-    const subjectInput = document.getElementById('subject');
-    const messageInput = document.getElementById('message');
-
-    const name = nameInput ? nameInput.value.trim() : '';
-    const email = emailInput ? emailInput.value.trim() : '';
-    const subject = subjectInput ? subjectInput.value.trim() : 'Portfolio Contact Inquiry';
-    const message = messageInput ? messageInput.value.trim() : '';
-
-    if (!name || !email || !message) {
-        showToast("Please fill in your name, email, and message.", false);
-        return false;
-    }
-
-    const originalHtml = submitBtn ? submitBtn.innerHTML : '<i class="fa-solid fa-paper-plane"></i> Send Message';
-
-    if (submitBtn) {
-        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending to Nibraas...';
-        submitBtn.disabled = true;
-    }
-
-    try {
-        const response = await fetch('https://formsubmit.co/ajax/nibraasnikz@gmail.com', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify({
-                name: name,
-                email: email,
-                _subject: `[Portfolio Contact] ${subject} - from ${name}`,
-                subject: subject,
-                message: message,
-                _template: 'table',
-                _captcha: 'false'
-            })
-        });
-
-        const data = await response.json();
-
-        if (response.ok || data.success === "true" || data.success === true) {
-            if (submitBtn) {
-                submitBtn.innerHTML = '<i class="fa-solid fa-circle-check"></i> Delivered!';
-            }
-            showToast(`Thank you, ${name}! Your email has been delivered to Nibraas's inbox.`);
-            if (form) form.reset();
-            const presetChips = document.querySelectorAll('.preset-chip');
-            presetChips.forEach(c => c.classList.remove('active'));
-        } else {
-            throw new Error(data.message || 'Submission failed');
-        }
-    } catch (err) {
-        console.warn('FormSubmit AJAX fallback triggered:', err);
-        // Fallback: Submit form natively or trigger mailto
-        if (form) {
-            showToast(`Sending via email service...`);
-            form.submit();
-            return true;
-        } else {
-            window.location.href = `mailto:nibraasnikz@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${name} (${email})\n\n${message}`)}`;
-            showToast(`Opening your email app to send to Nibraas...`);
-        }
-    } finally {
-        setTimeout(() => {
-            if (submitBtn) {
-                submitBtn.innerHTML = originalHtml;
-                submitBtn.disabled = false;
-            }
-        }, 3500);
-    }
-
-    return false;
-}
-
-window.handleFormSubmit = handleFormSubmit;
-
 document.addEventListener('DOMContentLoaded', () => {
+
+    // --- 0. Check URL params for successful form submission redirect ---
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success') === 'true') {
+        showToast("Thank you! Your message was successfully sent to Nibraas.");
+        // Clean URL without refresh
+        const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + window.location.hash;
+        window.history.replaceState({ path: cleanUrl }, '', cleanUrl);
+    }
 
     // --- 1. Theme Management (Smokey Dark / Warm Editorial) ---
     const themeToggleBtn = document.getElementById('theme-toggle');
@@ -228,10 +152,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- 5. Quick Message Starter Presets ---
+    // --- 5. Quick Message Starter Presets & Mailto Sync ---
     const presetChips = document.querySelectorAll('.preset-chip');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
     const subjectInput = document.getElementById('subject');
     const messageTextarea = document.getElementById('message');
+    const directMailtoLink = document.getElementById('direct-mailto-link');
 
     const presets = {
         hiring: {
@@ -252,6 +179,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    function updateMailtoLink() {
+        if (!directMailtoLink) return;
+        const s = subjectInput ? subjectInput.value.trim() : 'Portfolio Inquiry';
+        const m = messageTextarea ? messageTextarea.value.trim() : '';
+        const n = nameInput ? nameInput.value.trim() : '';
+        const e = emailInput ? emailInput.value.trim() : '';
+
+        const bodyContent = `From: ${n} ${e ? `(${e})` : ''}\n\n${m}`;
+        directMailtoLink.href = `mailto:nibraasnikz@gmail.com?subject=${encodeURIComponent(s || 'Portfolio Inquiry')}&body=${encodeURIComponent(bodyContent)}`;
+    }
+
+    if (nameInput) nameInput.addEventListener('input', updateMailtoLink);
+    if (emailInput) emailInput.addEventListener('input', updateMailtoLink);
+    if (subjectInput) subjectInput.addEventListener('input', updateMailtoLink);
+    if (messageTextarea) messageTextarea.addEventListener('input', updateMailtoLink);
+
     presetChips.forEach(chip => {
         chip.addEventListener('click', () => {
             const presetKey = chip.getAttribute('data-preset');
@@ -263,6 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 presetChips.forEach(c => c.classList.remove('active'));
                 chip.classList.add('active');
+                updateMailtoLink();
                 showToast("Message starter applied!");
             }
         });
@@ -292,10 +236,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- 7. Bind Direct Form Submit Listener ---
+    // --- 7. Form Submission Loading Feedback ---
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', handleFormSubmit);
+        contactForm.addEventListener('submit', (e) => {
+            const submitBtn = document.getElementById('submit-btn');
+            if (submitBtn) {
+                submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Submitting to Nibraas...';
+                submitBtn.style.opacity = '0.85';
+            }
+        });
     }
 
 });
