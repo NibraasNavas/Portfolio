@@ -3,6 +3,92 @@
    Theme: Smokey Blue (#2D394A) & Morlet Red (#562025)
    ========================================================================== */
 
+// --- Global Toast Notification Utility ---
+function showToast(message, isSuccess = true) {
+    let container = document.getElementById('toast-container');
+    if (!container) {
+        container = document.createElement('div');
+        container.id = 'toast-container';
+        container.className = 'toast-container';
+        document.body.appendChild(container);
+    }
+
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    const icon = isSuccess ? 'fa-circle-check' : 'fa-circle-exclamation';
+    toast.innerHTML = `<i class="fa-solid ${icon}"></i> <span>${message}</span>`;
+
+    container.appendChild(toast);
+
+    setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateY(10px)';
+        toast.style.transition = 'all 0.3s ease';
+        setTimeout(() => toast.remove(), 300);
+    }, 3500);
+}
+
+// Global expose for inline onsubmit attribute
+window.showToast = showToast;
+
+// --- Global Contact Form Handler ---
+function handleFormSubmit(e) {
+    if (e) e.preventDefault();
+    
+    const form = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn') || (form ? form.querySelector('button[type="submit"]') : null);
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const subjectInput = document.getElementById('subject');
+    const messageInput = document.getElementById('message');
+
+    const name = nameInput ? nameInput.value.trim() : '';
+    const email = emailInput ? emailInput.value.trim() : '';
+    const subject = subjectInput ? subjectInput.value.trim() : 'Portfolio Contact Inquiry';
+    const message = messageInput ? messageInput.value.trim() : '';
+
+    if (!name || !email || !message) {
+        showToast("Please fill in all required fields.", false);
+        return false;
+    }
+
+    const originalHtml = submitBtn ? submitBtn.innerHTML : '<i class="fa-solid fa-paper-plane"></i> Send Message';
+
+    if (submitBtn) {
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending message...';
+        submitBtn.disabled = true;
+    }
+
+    setTimeout(() => {
+        if (submitBtn) {
+            submitBtn.innerHTML = '<i class="fa-solid fa-check"></i> Message Sent!';
+        }
+        
+        showToast(`Thank you, ${name}! Your message has been sent to Nibraas.`);
+        
+        // Construct mailto link as direct communication fallback
+        const mailtoUrl = `mailto:nibraasnikz@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${name} (${email})\n\nMessage:\n${message}`)}`;
+        
+        // Reset form
+        if (form) form.reset();
+        
+        const presetChips = document.querySelectorAll('.preset-chip');
+        presetChips.forEach(c => c.classList.remove('active'));
+
+        // Reset submit button after 3 seconds
+        setTimeout(() => {
+            if (submitBtn) {
+                submitBtn.innerHTML = originalHtml;
+                submitBtn.disabled = false;
+            }
+        }, 3000);
+    }, 800);
+
+    return false;
+}
+
+window.handleFormSubmit = handleFormSubmit;
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- 1. Theme Management (Smokey Dark / Warm Editorial) ---
@@ -173,57 +259,17 @@ document.addEventListener('DOMContentLoaded', () => {
                             icon.classList.add('fa-copy');
                         }, 2000);
                     }
+                }).catch(() => {
+                    showToast(`Failed to copy. Email: ${textToCopy}`);
                 });
             }
         });
     });
 
-    // --- 7. Toast Notification Utility ---
-    window.showToast = function(message) {
-        const container = document.getElementById('toast-container');
-        if (!container) return;
-
-        const toast = document.createElement('div');
-        toast.className = 'toast';
-        toast.innerHTML = `<i class="fa-solid fa-circle-check"></i> <span>${message}</span>`;
-
-        container.appendChild(toast);
-
-        setTimeout(() => {
-            toast.style.opacity = '0';
-            toast.style.transform = 'translateY(10px)';
-            toast.style.transition = 'all 0.3s ease';
-            setTimeout(() => toast.remove(), 300);
-        }, 3200);
-    };
-
-    // --- 8. Simulated Contact Form Handler ---
-    window.handleFormSubmit = function(e) {
-        e.preventDefault();
-        const submitBtn = document.getElementById('submit-btn');
-        const originalHtml = submitBtn ? submitBtn.innerHTML : '';
-
-        if (submitBtn) {
-            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending message...';
-            submitBtn.disabled = true;
-        }
-
-        setTimeout(() => {
-            if (submitBtn) {
-                submitBtn.innerHTML = '<i class="fa-solid fa-check"></i> Message Sent!';
-            }
-            showToast("Thank you! Your message has been sent to Nibraas.");
-            e.target.reset();
-
-            presetChips.forEach(c => c.classList.remove('active'));
-
-            setTimeout(() => {
-                if (submitBtn) {
-                    submitBtn.innerHTML = originalHtml;
-                    submitBtn.disabled = false;
-                }
-            }, 3000);
-        }, 900);
-    };
+    // --- 7. Bind Direct Form Submit Listener ---
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', handleFormSubmit);
+    }
 
 });
