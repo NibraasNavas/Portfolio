@@ -25,14 +25,14 @@ function showToast(message, isSuccess = true) {
         toast.style.transform = 'translateY(10px)';
         toast.style.transition = 'all 0.3s ease';
         setTimeout(() => toast.remove(), 300);
-    }, 3500);
+    }, 4000);
 }
 
-// Global expose for inline onsubmit attribute
+// Global expose
 window.showToast = showToast;
 
-// --- Global Contact Form Handler ---
-function handleFormSubmit(e) {
+// --- Real Email Delivery Form Handler via FormSubmit.co AJAX ---
+async function handleFormSubmit(e) {
     if (e) e.preventDefault();
     
     const form = document.getElementById('contact-form');
@@ -48,41 +48,67 @@ function handleFormSubmit(e) {
     const message = messageInput ? messageInput.value.trim() : '';
 
     if (!name || !email || !message) {
-        showToast("Please fill in all required fields.", false);
+        showToast("Please fill in your name, email, and message.", false);
         return false;
     }
 
     const originalHtml = submitBtn ? submitBtn.innerHTML : '<i class="fa-solid fa-paper-plane"></i> Send Message';
 
     if (submitBtn) {
-        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending message...';
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending to Nibraas...';
         submitBtn.disabled = true;
     }
 
-    setTimeout(() => {
-        if (submitBtn) {
-            submitBtn.innerHTML = '<i class="fa-solid fa-check"></i> Message Sent!';
-        }
-        
-        showToast(`Thank you, ${name}! Your message has been sent to Nibraas.`);
-        
-        // Construct mailto link as direct communication fallback
-        const mailtoUrl = `mailto:nibraasnikz@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${name} (${email})\n\nMessage:\n${message}`)}`;
-        
-        // Reset form
-        if (form) form.reset();
-        
-        const presetChips = document.querySelectorAll('.preset-chip');
-        presetChips.forEach(c => c.classList.remove('active'));
+    try {
+        const response = await fetch('https://formsubmit.co/ajax/nibraasnikz@gmail.com', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                _subject: `[Portfolio Contact] ${subject} - from ${name}`,
+                subject: subject,
+                message: message,
+                _template: 'table',
+                _captcha: 'false'
+            })
+        });
 
-        // Reset submit button after 3 seconds
+        const data = await response.json();
+
+        if (response.ok || data.success === "true" || data.success === true) {
+            if (submitBtn) {
+                submitBtn.innerHTML = '<i class="fa-solid fa-circle-check"></i> Delivered!';
+            }
+            showToast(`Thank you, ${name}! Your email has been delivered to Nibraas's inbox.`);
+            if (form) form.reset();
+            const presetChips = document.querySelectorAll('.preset-chip');
+            presetChips.forEach(c => c.classList.remove('active'));
+        } else {
+            throw new Error(data.message || 'Submission failed');
+        }
+    } catch (err) {
+        console.warn('FormSubmit AJAX fallback triggered:', err);
+        // Fallback: Submit form natively or trigger mailto
+        if (form) {
+            showToast(`Sending via email service...`);
+            form.submit();
+            return true;
+        } else {
+            window.location.href = `mailto:nibraasnikz@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${name} (${email})\n\n${message}`)}`;
+            showToast(`Opening your email app to send to Nibraas...`);
+        }
+    } finally {
         setTimeout(() => {
             if (submitBtn) {
                 submitBtn.innerHTML = originalHtml;
                 submitBtn.disabled = false;
             }
-        }, 3000);
-    }, 800);
+        }, 3500);
+    }
 
     return false;
 }
@@ -260,7 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         }, 2000);
                     }
                 }).catch(() => {
-                    showToast(`Failed to copy. Email: ${textToCopy}`);
+                    showToast(`Email: ${textToCopy}`);
                 });
             }
         });
