@@ -1536,6 +1536,22 @@ img {
 
 
 /* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+.footer {
+    padding: 2.5rem 0;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-subtle);
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.footer-copyright {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
    Toast Notifications
    -------------------------------------------------------------------------- */
 .toast-container {
