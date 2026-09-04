@@ -1589,7 +1589,7 @@ img {
 
 .footer-bottom {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     padding-top: 2rem;
     font-size: 0.82rem;
@@ -1610,6 +1610,7 @@ img {
     justify-content: center;
     cursor: pointer;
     transition: var(--transition);
+    margin-left: auto;
 }
 
 .back-to-top-btn:hover {
