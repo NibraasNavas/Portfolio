@@ -1,97 +1,295 @@
 \documentclass[10pt,a4paper]{article}
 
-% --- Packages ---
-\usepackage[utf8]{inputenc}
-\usepackage[margin=0.6in]{geometry}
-\usepackage[scaled=0.95]{helvet}
-\renewcommand{\familydefault}{\sfdefault}
-\usepackage{microtype}
-\usepackage{xcolor}
-\usepackage{hyperref}
-\usepackage{tabularx}
+% ------------------------------------------------------------
+% PACKAGES
+% ------------------------------------------------------------
+\usepackage[
+    top=0.45in,
+    bottom=0.45in,
+    left=0.55in,
+    right=0.55in
+]{geometry}
+
+\usepackage{enumitem}
 \usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+\usepackage{microtype}
 
-% --- Color Palette ---
-\definecolor{primary}{HTML}{000000}
-\definecolor{textgray}{HTML}{333333}
-\definecolor{lightgray}{HTML}{555555}
-\definecolor{linkblue}{HTML}{0044CC}
+% ------------------------------------------------------------
+% COLORS
+% ------------------------------------------------------------
+\definecolor{heading}{RGB}{30,45,65}
+\definecolor{accent}{RGB}{45,85,125}
+\definecolor{textgray}{RGB}{70,70,70}
 
-% --- Hyperlink Setup ---
-\hypersetup{
-    colorlinks=true,
-    linkcolor=linkblue,
-    urlcolor=linkblue,
-    pdftitle={Nibraas Navas - Resume},
-    pdfauthor={Nibraas Navas}
-}
-
-% --- Page Setup ---
+% ------------------------------------------------------------
+% PAGE SETTINGS
+% ------------------------------------------------------------
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{3pt}
+\setlength{\parskip}{0pt}
 
-% --- Section Formatting ---
+% ------------------------------------------------------------
+% SECTION FORMATTING
+% ------------------------------------------------------------
 \titleformat{\section}
-  {\large\bfseries\uppercase}
+  {\large\bfseries\color{heading}}
   {}
   {0pt}
   {}
-  [\vspace{-4pt}\rule{\textwidth}{0.5pt}]
-\titlespacing*{\section}{0pt}{10pt}{6pt}
+  [\vspace{-5pt}\color{accent}\rule{\linewidth}{0.6pt}]
 
+\titlespacing*{\section}
+  {0pt}
+  {7pt}
+  {5pt}
+
+% ------------------------------------------------------------
+% LIST SETTINGS
+% ------------------------------------------------------------
+\setlist[itemize]{
+    leftmargin=1.25em,
+    itemsep=1.5pt,
+    topsep=1.5pt,
+    parsep=0pt,
+    partopsep=0pt
+}
+
+% ------------------------------------------------------------
+% CUSTOM COMMANDS
+% ------------------------------------------------------------
+\newcommand{\resumeProject}[3]{
+    \vspace{2pt}
+    \textbf{\color{heading}#1}
+    \hfill
+    {\small\textcolor{textgray}{#2}}
+
+    {\small\textit{#3}}
+    \vspace{1pt}
+}
+
+\newcommand{\resumeEducation}[4]{
+    \textbf{\color{heading}#1}
+    \hfill
+    {\small #2}
+
+    {\small #3}
+    \hfill
+    {\small\textbf{#4}}
+}
+
+\newcommand{\skill}[2]{
+    \textbf{#1} #2
+}
+
+% ------------------------------------------------------------
+% DOCUMENT
+% ------------------------------------------------------------
 \begin{document}
 
-% ==================== HEADER ====================
-{\LARGE \textbf{NIBRAAS NAVAS}}\\[2pt]
-{\small \textbf{DATA SCIENCE \quad MACHINE LEARNING ENGINEER}}\\[4pt]
-{\small 
-+91 9656535727 \quad$\cdot$\quad 
-\href{mailto:nibraasnikz@gmail.com}{nibraasnikz@gmail.com} \quad$\cdot$\quad 
-\href{https://linkedin.com/in/nibraas-navas}{linkedin.com/in/nibraas-navas} \quad$\cdot$\quad 
-\href{https://github.com/NibraasNavas}{github.com/NibraasNavas}\\[2pt]
-\href{https://nibraasnavas.github.io/Portfolio/}{nibraasnavas.github.io/Portfolio/} \quad$\cdot$\quad 
-Kerala, India
+% ============================================================
+% HEADER
+% ============================================================
+
+\begin{center}
+
+    {\fontsize{22}{24}\selectfont
+    \textbf{\color{heading}NIBRAAS NAVAS}}
+
+    \vspace{3pt}
+
+    {\normalsize
+    \textbf{\color{accent}DATA SCIENCE \& MACHINE LEARNING}}
+
+    \vspace{5pt}
+
+    {\small
+    +91 9656535727
+    \quad $\vert$ \quad
+    \href{mailto:nibraasnikz@gmail.com}{nibraasnikz@gmail.com}
+    \quad $\vert$ \quad
+    \href{https://linkedin.com/in/nibraas-navas}{LinkedIn}
+    \quad $\vert$ \quad
+    \href{https://github.com/NibraasNavas}{GitHub}
+    \quad $\vert$ \quad
+    \href{https://nibraasnavas.github.io/Portfolio/}{Portfolio}
+    }
+
+\end{center}
+
+\vspace{-2pt}
+
+% ============================================================
+% PROFESSIONAL SUMMARY
+% ============================================================
+
+\section{Professional Summary}
+
+Computer Science \& Engineering (Data Science) undergraduate with hands-on experience
+building machine learning, computer vision, and data analytics applications. I enjoy
+turning real-world problems into practical software, from real-time fatigue detection
+on edge devices to predictive models and interactive dashboards. Strong foundation in
+Python, SQL, machine learning, data analysis, and model evaluation, with a focus on
+building reliable and useful solutions.
+
+% ============================================================
+% TECHNICAL SKILLS
+% ============================================================
+
+\section{Technical Skills}
+
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.20\linewidth} X@{}}
+
+\skill{Programming:}
+&
+Python, SQL, C, Dart, HTML/CSS
+\\[2pt]
+
+\skill{Data Science:}
+&
+Pandas, NumPy, Exploratory Data Analysis, Statistical Inference,
+Feature Engineering, Data Cleaning
+\\[2pt]
+
+\skill{Machine Learning:}
+&
+Scikit-learn, TensorFlow, Regression, Classification,
+Model Validation, SHAP, Computer Vision
+\\[2pt]
+
+\skill{AI / Computer Vision:}
+&
+OpenCV, Dlib, CNNs, Facial Landmark Detection,
+Image Classification
+\\[2pt]
+
+\skill{Visualization:}
+&
+Power BI, Tableau, Plotly, Matplotlib, Seaborn,
+Interactive Dashboards, KPI Reporting
+\\[2pt]
+
+\skill{Development:}
+&
+FastAPI, Django, REST APIs, Streamlit, Git, GitHub,
+Docker, Jupyter, VS Code
+\\[2pt]
+
+\skill{Cloud / Mobile :}
+&
+Firebase, Flutter, Hive NoSQL, Raspberry Pi, Edge AI
+\\
+\end{tabularx}
+
+% ============================================================
+% PROJECTS
+% ============================================================
+
+\section{Projects}
+
+% ------------------------------------------------------------
+% PROJECT 1
+% ------------------------------------------------------------
+
+\resumeProject
+{AwareDrive: Real-Time Driver Fatigue \& Safety Telemetry}
+{Python $\cdot$ OpenCV $\cdot$ TensorFlow $\cdot$ Dlib $\cdot$ Raspberry Pi}
+{Edge Computer Vision \& Real-Time Safety Monitoring}
+
+\begin{itemize}
+
+    \item Built a custom CNN with Batch Normalization and Dropout for driver fatigue
+    classification, achieving \textbf{92.4\% classification accuracy} across
+    multi-subject alert and fatigue image benchmarks.
+
+    \item Developed real-time facial landmark tracking using Dlib and OpenCV,
+    calculating Eye Aspect Ratio (EAR), Mouth Aspect Ratio (MAR), and
+    PERCLOS-based fatigue indicators.
+
+    \item Optimized the model with TFLite Float16 quantization, reducing memory
+    usage by \textbf{50\%} and achieving \textbf{<15 ms inference}.
+
+    \item Deployed the system on Raspberry Pi at \textbf{30+ FPS}, with visual and
+    acoustic alerts triggered in \textbf{<500 ms} under variable lighting
+    and head-pose conditions.
+
+\end{itemize}
+
+% ------------------------------------------------------------
+% PROJECT 2
+% ------------------------------------------------------------
+
+\resumeProject
+{Recipe Wizard: Multimodal AI Culinary Assistant}
+{Flutter $\cdot$ Dart $\cdot$ Gemini API $\cdot$ Firebase $\cdot$ Hive}
+{Multimodal AI \& Mobile Application}
+
+\begin{itemize}
+
+    \item Built a cross-platform mobile application using Gemini's multimodal
+    vision capabilities to identify \textbf{15+ ingredients} from live camera
+    captures with \textbf{<2.5 s generation latency}.
+
+    \item Designed structured few-shot prompts and JSON schemas to produce
+    consistent recipe outputs while handling dietary and allergen constraints.
+
+    \item Implemented offline-first local caching with Hive, reducing redundant
+    API calls by \textbf{60\%}, with Firebase synchronization for cloud-backed data.
+
+    \item Developed asynchronous state management and recipe bookmarking in
+    Flutter/Dart for responsive local retrieval and cross-device access.
+
+\end{itemize}
+
+% ============================================================
+% EDUCATION
+% ============================================================
+
+\section{Education}
+
+\resumeEducation
+{Bachelor of Technology (B.Tech) in Computer Science \& Engineering (Data Science)}
+{2022 -- 2026}
+{APJ Abdul Kalam Technological University, Kerala, India}
+{CGPA: 7.11/10.0}
+
+\vspace{2pt}
+
+{\small
+\textbf{Relevant Coursework:}
+Machine Learning, Statistical Analysis, Database Management Systems,
+Big Data Processing, Computer Vision, Algorithms
 }
 
 \vspace{4pt}
 
-% ==================== SUMMARY ====================
-\section*{SUMMARY}
-Recent Computer Science graduate specializing in Data Science with hands-on experience building AI-powered analytics platforms, machine learning pipelines, and business intelligence solutions. Proficient in Python, SQL, Power BI, and Scikit-learn, seeking opportunities in Data Science, Machine Learning, and AI Engineering.
+\resumeEducation
+{Higher Secondary Education -- Science \& Mathematics}
+{2020 -- 2022}
+{Aleemul Islam Higher Secondary School, Kerala, India}
+{}
 
-% ==================== TECHNICAL SKILLS ====================
-\section*{TECHNICAL SKILLS}
-\begin{tabularx}{\textwidth}{@{} p{3.8cm} X @{}}
-\textbf{Programming} & Python, SQL, Django, FastAPI \\
-\textbf{Data Analytics} & Pandas, NumPy, Data Cleaning, EDA, Statistical Analysis, Feature Engineering \\
-\textbf{Machine Learning} & Scikit-learn, Regression, Classification, Model Evaluation, SHAP \\
-\textbf{Visualization} & Power BI, Tableau, Plotly, Matplotlib, Seaborn \\
-\textbf{Tools} & Git, GitHub, Streamlit, VS Code, Jupyter Notebook, Excel \\
-\end{tabularx}
+% ============================================================
+% CERTIFICATIONS
+% ============================================================
 
-% ==================== PROJECTS ====================
-\section*{PROJECTS}
+\section{Certifications}
 
-\textbf{Driver Drowsiness Detection} \\
-{\small\color{lightgray} Python $\cdot$ TensorFlow $\cdot$ OpenCV $\cdot$ Dlib $\cdot$ Raspberry Pi} \\
-Developed a driver drowsiness detection system using deep learning and computer vision. The system uses a camera to detect signs like closed eyes and yawning and gives an alert when drowsiness is detected.
+\begin{itemize}
 
-\vspace{4pt}
+    \item \textbf{Python for Data Science} -- Infosys Springboard
+    \hfill Feb 2025
 
-\textbf{Recipe Wizard: An AI Recipe Generator} \\
-{\small\color{lightgray} Flutter $\cdot$ Dart $\cdot$ Gemini API $\cdot$ Hive $\cdot$ Firebase} \\
-Developed an AI-powered mobile app that generates personalized recipes based on ingredient images and user preferences. The app also allows users to save and view their recipe history and favorites.
+    \item \textbf{Statistical Inference using Python} -- Infosys Springboard
+    \hfill Mar 2025
 
-% ==================== EDUCATION ====================
-\section*{EDUCATION}
+    \item \textbf{Fundamentals of Artificial Intelligence} -- IBM SkillsBuild
+    \hfill Oct 2026
 
-\textbf{B.Tech in Computer Science and Engineering (Data Science)} \hfill 2022 -- 2026 \\
-SCMS School of Engineering and Technology $\cdot$ Kerala, India
-
-\vspace{3pt}
-
-\textbf{Higher Secondary Education} \hfill 2020 -- 2022 \\
-Aleemul Islam Higher Secondary School $\cdot$ Kerala, India
+\end{itemize}
 
 \end{document}
