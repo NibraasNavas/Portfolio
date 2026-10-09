@@ -4,16 +4,21 @@
 % PACKAGES
 % ------------------------------------------------------------
 \usepackage[
-    top=0.45in,
-    bottom=0.45in,
-    left=0.55in,
-    right=0.55in
+    top=0.35in,
+    bottom=0.35in,
+    left=0.50in,
+    right=0.50in
 ]{geometry}
 
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage{xcolor}
-\usepackage[hidelinks]{hyperref}
+\usepackage[
+    colorlinks=true,
+    urlcolor=linkblue,
+    linkcolor=linkblue,
+    citecolor=linkblue
+]{hyperref}
 \usepackage{array}
 \usepackage{tabularx}
 \usepackage{ragged2e}
@@ -25,6 +30,7 @@
 \definecolor{heading}{RGB}{30,45,65}
 \definecolor{accent}{RGB}{45,85,125}
 \definecolor{textgray}{RGB}{70,70,70}
+\definecolor{linkblue}{RGB}{35,100,180}
 
 % ------------------------------------------------------------
 % PAGE SETTINGS
@@ -91,9 +97,9 @@
 % ------------------------------------------------------------
 \begin{document}
 
-% ============================================================
-% HEADER
-% ============================================================
+% ------------------------------------------------------------
+% HEADER WITH VISIBLE, CLICKABLE URLS
+% ------------------------------------------------------------
 
 \begin{center}
 
@@ -105,18 +111,25 @@
     {\normalsize
     \textbf{\color{accent}DATA SCIENCE \& MACHINE LEARNING}}
 
-    \vspace{5pt}
+    \vspace{6pt}
 
     {\small
     +91 9656535727
     \quad $\vert$ \quad
     \href{mailto:nibraasnikz@gmail.com}{nibraasnikz@gmail.com}
+    }
+
+    \vspace{3pt}
+
+    {\footnotesize
+    \href{https://linkedin.com/in/nibraas-navas}
+    {linkedin.com/in/nibraas-navas}
     \quad $\vert$ \quad
-    \href{https://linkedin.com/in/nibraas-navas}{LinkedIn}
+    \href{https://github.com/NibraasNavas}
+    {github.com/NibraasNavas}
     \quad $\vert$ \quad
-    \href{https://github.com/NibraasNavas}{GitHub}
-    \quad $\vert$ \quad
-    \href{https://nibraasnavas.github.io/Portfolio/}{Portfolio}
+    \href{https://nibraasnavas.github.io/Portfolio/}
+    {nibraasnavas.github.io/Portfolio/}
     }
 
 \end{center}
@@ -147,7 +160,7 @@ building reliable and useful solutions.
 \skill{Programming:}
 &
 Python, SQL, C, Dart, HTML/CSS
-\\[2pt]
+\\[1pt]
 
 \skill{Data Science:}
 &
